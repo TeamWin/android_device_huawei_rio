@@ -27,10 +27,8 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 # Kernel
 TARGET_CUSTOM_KERNEL_HEADERS := device/huawei/rio/include
 TARGET_PREBUILT_KERNEL := device/huawei/rio/kernel
-
-BOARD_MKBOOTIMG_ARGS := --dt device/huawei/rio/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=enforcing
-
+BOARD_MKBOOTIMG_ARGS := --dt device/huawei/rio/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -43,7 +41,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/f
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-# TWRP-Specific
+# Twrp
 TARGET_RECOVERY_FSTAB := device/huawei/rio/recovery/etc/twrp.fstab
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
@@ -60,7 +58,4 @@ TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_SUPPRESS_SECURE_ERASE := true
-TW_EXCLUDE_MTP := true
-TW_NO_CPU_TEMP := true
-#TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/rio/recovery/graphics.c
-TW_DISABLE_DOUBLE_BUFFERING := true
+TW_INPUT_BLACKLIST := "accelerometer"
