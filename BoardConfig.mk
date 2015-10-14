@@ -29,7 +29,7 @@ TARGET_CUSTOM_KERNEL_HEADERS := device/huawei/rio/include
 TARGET_PREBUILT_KERNEL := device/huawei/rio/kernel
 
 BOARD_MKBOOTIMG_ARGS := --dt device/huawei/rio/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=enforcing
 
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -63,4 +63,4 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 TW_EXCLUDE_MTP := true
 TW_NO_CPU_TEMP := true
 #TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/rio/recovery/graphics.c
-#TW_DISABLE_DOUBLE_BUFFERIN := true
+TW_DISABLE_DOUBLE_BUFFERING := true
