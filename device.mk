@@ -12,6 +12,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/recovery/sbin/healthd:root/sbin/healthd
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
 PRODUCT_NAME := rio
